@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= title
+  - const walnut   = ['walnut_type','weight','cost']
+  - let results;
+  script.
+    function buy(x){
+      alert('Purchased Item: ' + x)
+   } 
+  div(class='container-fluid')
+    div(class='row')
+      each results, index in walnut  
+        div(class='col-sm-2' onclick='buy('+index+')') #{results} 
