@@ -1,6 +1,6 @@
-# fwb20gundampally
+# db20gundampally
 sravanthi gundampally
-[heroku server](https://fwb20gundampally.herokuapp.com/)
+[heroku server](https://db20gundampally.herokuapp.com/)
 
 Class walnut
 
