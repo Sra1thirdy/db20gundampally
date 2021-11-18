@@ -1,0 +1,53 @@
+extends layout
+
+block content
+  h1= title
+
+  if (toShow == null)
+    h2 No instance to delete
+  else
+    - let walnutid = toShow._id
+    - let walnut_type = toShow.walnut_type
+    - let weight = toShow.weight
+    - let cost = toShow.cost 
+    - let actionid = "/resource/walnut/" + walnutid
+    script let actionid = "#{actionid}"
+    div
+      div.row
+        div(class='walnutAttr mr-3') walnut ID is:
+        div #{walnutid}
+      div.row
+        div(class='walnutAttr mr-3') walnut Type is:
+        div #{walnut_type}
+      div.row
+        div(class='walnutAttr mr-3') walnut  weight is:
+        div #{weight}
+      div.row
+        div(class='walnutAttr mr-3') walnut cost is:
+        div #{cost}
+
+    button(class="btn btn-danger m-2" onclick="deleteOnid()") Delete
+    button(class="btn btn-secondary m-2" onclick="cancel()") Cancel
+
+  script.
+    function cancel() {
+      // Go back to the home page for the walnut collection
+      window.location.href='/walnut'
+    }
+  script.
+    function deleteOnid() {
+      console.log("starting delete")
+      // delete first
+      fetch(actionid, {
+        method: 'DELETE'      // Don't need a body for the delete
+      }).then((resp) => {
+        return resp.json(); // or resp.text() or whatever the server sends
+      }).then((body) => {
+        alert("Delete succeded")
+        window.location.href='/walnut'
+        // TODO handle body
+      }).catch((error) => {
+        // TODO handle error
+        alert("Delete failed " + error )
+      });
+    }

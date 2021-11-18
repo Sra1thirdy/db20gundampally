@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  h1(class="Title")= title
+   if (toShow == null)
+    h2 No instance to Update
+   else 
+    - let walnutid = toShow._id   
+    - let walnut_type = toShow.walnut_type
+    - let weight = toShow.weight
+    - let cost = toShow.cost
+    div
+      div.row
+        div(class='walnutAttr mr-3') walnut ID is:
+        div #{walnutid}
+      div.row
+        div(class='walnutAttr mr-3') walnut walnutType is:
+        div #{walnut_type}
+      div.row
+        div(class='walnutAttr mr-3') walnut weight is:
+        div #{weight}
+      div.row
+        div(class='walnutAttr mr-3') walnut cost is:
+        div #{cost}

@@ -6,3 +6,16 @@ body {
 a {
   color: #00B7FF;
 }
+.walnutAttr { 
+  background-color: aquamarine; 
+  width: 150px; 
+  text-align:left;
+  padding: 8px;
+  margin: 5px;
+  flex-wrap: nowrap;
+}
+.Title{
+  color:palevioletred;
+  font-weight: 500;
+  font-family: sans-serif;
+}

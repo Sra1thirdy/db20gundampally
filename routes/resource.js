@@ -11,22 +11,22 @@ var walnut_controller = require('../controllers/walnut');
 // GET resources base. 
 router.get('/', api_controller.api); 
 router.get('/', walnut_controllers.walnut_view_all_Page );  
-/// COSTUME ROUTES /// 
+/// walnut ROUTES /// 
  
-// POST request for creating a Costume.  
+// POST request for creating a walnut.  
 router.post('/walnut', walnut_controller.walnut_create_post); 
  
-// DELETE request to delete Costume. 
+// DELETE request to delete walnut. 
 router.delete('/walnut/:id', walnut_controllers.walnut_delete); 
  
-// PUT request to update Costume. 
+// PUT request to update walnut. 
 router.put('/walnut/:id', 
 walnut_controllers.walnut_update_put); 
  
-// GET request for one Costume. 
+// GET request for one walnut. 
 router.get('/walnut/:id', walnut_controllers.walnut_detail); 
  
-// GET request for list of all Costume items. 
+// GET request for list of all walnut items. 
 router.get('/walnut', walnut_controllers.walnut_list); 
  
 module.exports = router; 
