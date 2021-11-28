@@ -2,15 +2,27 @@ extends layout
 
 block content
   h1= title
-  p Welcome to Sravanthi Gundampally #{title} 
-  button(type="button",onclick='update()', class="btn btn-secondary") Press Me
-  div(id="target") text of Display 
-
+  p Welcome to the page #{title}
+  p Sravanthi Gundampally
+  if (!user)
+    a(href="/login") Login
+    br
+    a(href="/register") Register
+  if (user)
+    p You are currently logged in as #{user.username}
+    a(href="/walnut") Take me to walnut
+    br
+    a(href="/logout") Logout
+  br
+  button(type="button", class="btn btn-secondary" onclick='update()') press me 
+  br
+  br
+  div(id='target') Display
+  br
+  a(href='/walnut') Search walnut page
   script.
     var client_count = 0;
     function update(){
-      client_count +=1;
-      document.getElementById("target").innerHTML = "Value now " + client_count;
+      client_count++
+      document.getElementById("target").innerHTML = `Value now ${client_count}`
     }
-
-  a(href='walnut') walnut
